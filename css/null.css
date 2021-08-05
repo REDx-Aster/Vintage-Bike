@@ -38,7 +38,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 input,
@@ -78,5 +78,5 @@ img {
 }
 
 h1 {
-  font-family: 'RalewayLigh';
+  font-family: "RalewayLight";
 }

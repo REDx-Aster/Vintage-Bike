@@ -141,7 +141,7 @@ body {
       height: 100%;
       top: 0;
       left: 0;
-      overflow: scroll;
+      overflow: auto;
       background-color: #4d4959;
       padding: 150px 0px 0px 0px;
       @include anim(0.3s, 0s);

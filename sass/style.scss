@@ -94,6 +94,7 @@ body {
   &__icon {
   }
   &__body {
+    @include tr(0px, -100%, 0px);
   }
   &__list {
     @include flexbox();
@@ -133,20 +134,25 @@ body {
   }
   @media (max-width: 767px) {
     &__body {
+      opacity: 0;
+      visibility: hidden;
       position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
-      overflow: auto;
+      overflow: scroll;
       background-color: #4d4959;
       padding: 150px 0px 0px 0px;
-      @include tr(0px, -100%, 0px);
       @include anim(0.3s, 0s);
       &.active {
+        @include anim(0.3s, 0s);
+        opacity: 1;
+        visibility: visible;
         @include tr(0px, 0px, 0px);
       }
     }
+
     &__list {
       flex-direction: column;
       justify-content: center;
@@ -184,11 +190,11 @@ body {
 .icon-menu {
   @media (max-width: 767px) {
     display: block;
-    position: fixed;
+    position: absolute;
     width: 30px;
     height: 18px;
-    top: 24px;
-    right: 24px;
+    top: 16px;
+    right: 10px;
     cursor: pointer;
     z-index: 5;
     span {
@@ -369,10 +375,6 @@ body {
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    // img{
-    // 	width: auto;
-    // 	height: auto;
-    // }
     span {
       margin: 10px 0 0 0;
       font-size: 14px;

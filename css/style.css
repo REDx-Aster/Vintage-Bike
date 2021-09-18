@@ -192,6 +192,13 @@ body {
   }
 }
 
+.menu__body {
+  transform: translate3d(0px, -100%, 0px);
+  -webkit-transform: translate3d(0px, -100%, 0px);
+  -ms-transform: translate3d(0px, -100%, 0px);
+  -o-transform: translate3d(0px, -100%, 0px);
+}
+
 .menu__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,24 +244,28 @@ body {
 
 @media (max-width: 767px) {
   .menu__body {
+    opacity: 0;
+    visibility: hidden;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow: scroll;
     background-color: #4d4959;
     padding: 150px 0px 0px 0px;
-    transform: translate3d(0px, -100%, 0px);
-    -webkit-transform: translate3d(0px, -100%, 0px);
-    -ms-transform: translate3d(0px, -100%, 0px);
-    -o-transform: translate3d(0px, -100%, 0px);
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -ms-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
   }
   .menu__body.active {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    opacity: 1;
+    visibility: visible;
     transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
     -ms-transform: translate3d(0px, 0px, 0px);
@@ -302,11 +313,11 @@ body {
 @media (max-width: 767px) {
   .icon-menu {
     display: block;
-    position: fixed;
+    position: absolute;
     width: 30px;
     height: 18px;
-    top: 24px;
-    right: 24px;
+    top: 16px;
+    right: 10px;
     cursor: pointer;
     z-index: 5;
   }

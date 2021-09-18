@@ -1,3 +1,4 @@
+//all mixin
 @mixin anim($time, $deley) {
   -webkit-transition: all $time ease $deley;
   -moz-transition: all $time ease $deley;

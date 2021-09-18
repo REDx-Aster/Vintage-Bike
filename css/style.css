@@ -340,6 +340,11 @@ body {
     top: auto;
     bottom: 0px;
   }
+  .icon-menu.active {
+    position: fixed;
+    top: 32px;
+    right: 10px;
+  }
   .icon-menu.active span {
     background-color: #fff;
     -webkit-transform: scale(0);

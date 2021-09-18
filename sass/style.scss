@@ -214,6 +214,9 @@ body {
       }
     }
     &.active {
+      position: fixed;
+      top: 32px;
+      right: 10px;
       // &._active
       span {
         background-color: #fff;

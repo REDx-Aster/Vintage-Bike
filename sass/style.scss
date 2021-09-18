@@ -85,6 +85,7 @@ body {
 }
 // <MENU>
 .menu {
+  z-index: 100;
   @media (max-width: 767px) {
     width: 100%;
     background-color: #4d4959;
@@ -131,41 +132,44 @@ body {
   }
   @media (max-width: 767px) {
     &__body {
-      // position: fixed;
+      position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
+      overflow: auto;
       background-color: #4d4959;
-      padding: 300px 0px 0px 0px;
+      padding: 150px 0px 0px 0px;
+      @include tr(0px, -100%, 0px);
+      @include anim(0.3s, 0s);
+      &.active {
+        @include tr(0px, 0px, 0px);
+      }
     }
     &__list {
-      color: #fff;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      color: #fff;
       li {
-        padding: 155px 0 35px 0;
+        padding: 155px 0 45px 0;
         &:nth-child(1),
         &:nth-child(2),
         &:nth-child(3) {
-          padding: 0 0 35px 0;
+          padding: 0 0 45px 0;
           &::after {
             display: block;
           }
         }
         &:last-child {
-          padding: 0 0 35px 0;
+          padding: 0 0 0 0;
         }
         &::after {
-          content: "";
-          width: 3px;
-          height: 3px;
+          width: 4px;
+          height: 4px;
           background-color: #fff;
-          border-radius: 50%;
-          position: absolute;
           right: 50%;
-          top: 36px;
+          top: 40px;
           margin: 0px -2px 0px 0px;
         }
       }
@@ -176,6 +180,50 @@ body {
     }
   }
 }
+.icon-menu {
+  @media (max-width: 767px) {
+    display: block;
+    position: fixed;
+    width: 30px;
+    height: 18px;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      @include anim(0.3s, 0s);
+      top: 8px;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #4b4b4b;
+      &:first-child {
+        top: 0px;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0px;
+      }
+    }
+    &.active {
+      // &._active
+      span {
+        background-color: #fff;
+        @include scale(0);
+        &:first-child {
+          @include rotate(-45deg);
+          top: 8px; // calc(50% - 1px);
+        }
+        &:last-child {
+          @include rotate(45deg);
+          bottom: 8px; // calc(50% - 1px);
+        }
+      }
+    }
+  }
+}
+
 .generation {
   padding: 120px 0;
   background-color: #f7f7f7;
